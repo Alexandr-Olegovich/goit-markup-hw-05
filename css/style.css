@@ -124,7 +124,9 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--grey-color);
+  transform: transition 250ms linear;
 }
+  
 .link-head-one {
   color: var(--black-color);
 }
@@ -133,6 +135,21 @@ body {
   display: flex;
   align-items: center;
 }
+.current {
+  position: relative; 
+   color: #2196f3;
+}
+ .current::after{
+  content: '';
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  position: absolute;
+  background-color: #2196f3;
+  left: 0;
+  bottom: 0;
+}
+
 /* header end _______________________________HEADER-END_______________________________header end*/
 
 img {
@@ -186,6 +203,7 @@ a {
   color: var(--black-color);
   background-color: #f5f4fa;
 }
+ 
 .portfolio-button:hover,
 .portfolio-button:focus {
   color: var(--white-color);
@@ -281,7 +299,7 @@ a {
   flex-wrap: wrap;
 }
 
-.portfolio-item {
+.portfolio-item {  
   margin-left: 30px;
 }
 .portfolio-item:nth-child(3n + 1) {
@@ -319,6 +337,52 @@ a {
   line-height: 2;
   letter-spacing: 0.06em;
 }
+.card-conteiner{
+  position: relative;
+  overflow: hidden;
+} 
+.portfolio-item:hover .portfolio-image-text{
+  transform: translateY(0%);
+}
+.portfolio-item:focus .portfolio-image-text{
+  transform: translateY(0%);
+}
+.portfolio-image-text{
+  padding: 63px 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+line-height: calc(28 / 18);
+letter-spacing: 0.03em;
+color: var(--white-color);
+background-color: rgba(33, 150, 243, 0.9);
+width: 100%;
+height: 100%;
+transform: translateY(100%);
+}
+.work-item{
+  position: relative;
+}
+.work-box{
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  height: 70px;   
+  padding: 27px auto;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.work-text{ 
+font-size: 14px;
+line-height: calc(16 / 14);
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--white-color);
+}
 /*BLOCK-FOUR____________________________________BLOCK-FOUR_________________________________________BLOCK-FOUR*/
 .team-section {
   background: #f5f4fa;
@@ -335,7 +399,8 @@ a {
 }
 .work-title,   /*H-2_______________________________H-2___________________________________H-2*/
 .comand-title,
-.client-title {
+.client-title
+ {
   margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
@@ -508,4 +573,36 @@ a {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal{
+  width: 528px;
+  min-height: 581px;
+  background: var(--white-color);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-close-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1) ;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
