@@ -124,7 +124,8 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--grey-color);
-  transform: transition 250ms linear;
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
   
 .link-head-one {
@@ -202,6 +203,8 @@ a {
   letter-spacing: 0.03em;
   color: var(--black-color);
   background-color: #f5f4fa;
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
  
 .portfolio-button:hover,
@@ -210,8 +213,10 @@ a {
   background-color: var(--blue-color);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.portfolio-link {
+.portfolio-link {  
   display: block;
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -234,6 +239,8 @@ a {
   letter-spacing: 0.06em;
   background-color: var(--blue-color);
   color: var(--white-color);
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .press-it:hover,
@@ -360,6 +367,8 @@ background-color: rgba(33, 150, 243, 0.9);
 width: 100%;
 height: 100%;
 transform: translateY(100%);
+transition: transform 250ms linear;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .work-item{
   position: relative;
@@ -425,6 +434,14 @@ color: var(--white-color);
   text-align: center;
   padding: 30px 0;
 }
+.card-name /* portfolio h2*/ {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--black-color);
+}
 /*Icons_______________________________________________ICONS____________________________________*/
 .team-contacts {
   display: flex;
@@ -440,6 +457,8 @@ color: var(--white-color);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-link:hover,
@@ -479,6 +498,8 @@ color: var(--white-color);
   width: 100%;
   height: 100%;
   color: #afb1b8;
+  transition: transform 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
@@ -491,10 +512,6 @@ color: var(--white-color);
 .join-link {
   background: rgba(255, 255, 255, 0.1);
 }
-.client-link:hover {
-  color: #2196f3;
-}
-
 .client-item:nth-child(n + 2) {
   margin-left: 30px;
 }
