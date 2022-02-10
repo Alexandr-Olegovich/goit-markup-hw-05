@@ -216,12 +216,13 @@ a {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .portfolio-link {
-  display: block;
+  display: block;  
   transition:  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
 }
 
 .press-it {
@@ -242,13 +243,14 @@ a {
   color: var(--white-color);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .press-it:hover,
 .press-it:focus {
   color: var(--grey-color);
   background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .portfolio-button,
 .press-it {
@@ -309,6 +311,7 @@ a {
 }
 
 .portfolio-item {
+  
   margin-left: 30px;
 }
 .portfolio-item:nth-child(3n + 1) {
@@ -350,10 +353,10 @@ a {
   position: relative;
   overflow: hidden;
 }
-.portfolio-item:hover .portfolio-image-text {
+.portfolio-link:hover .portfolio-image-text {
   transform: translateY(0%);
 }
-.portfolio-item:focus .portfolio-image-text {
+.portfolio-link:focus .portfolio-image-text {
   transform: translateY(0%);
 }
 .portfolio-image-text {
@@ -602,8 +605,13 @@ a {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.backdrop.is-hidden .modal{
+  transform: translateY(-50%) scale(0.5);
+}
+
 .modal {
   width: 528px;
   min-height: 581px;
@@ -612,8 +620,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn {
   width: 30px;
@@ -632,6 +640,7 @@ a {
 }
 .modal {
   padding: 40px 40px;
+
 }
 .modal-title {
   text-align: center;
